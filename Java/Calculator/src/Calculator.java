@@ -36,7 +36,7 @@ public class Calculator {
 
         displayPanel.setLayout(new BorderLayout());
         displayPanel.add(displayLabel);
-        frame.add(displayPanel);
+        frame.add(displayPanel, BorderLayout.NORTH);
     }
 
 

@@ -86,6 +86,34 @@ public class Calculator {
                 button.setForeground(Color.white);
             }
             buttonsPanel.add(button);
+
+            // Handle button clicks and determine the type of input 
+            button.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    JButton button = (JButton) e.getSource();
+                    String buttonValue = button.getText();
+                    if (Arrays.asList(rightSymbols).contains(buttonValue)) {
+                        
+                    }
+                    else if (Arrays.asList(topSymbols).contains(buttonValue)) {
+
+                    }
+                    else { // Digits or "."
+                        if (buttonValue.equals(".")) {
+
+                        }
+                        else if ("0123456789".contains(buttonValue)) {
+                            if (displayLabel.getText().equals("0")) {
+                                displayLabel.setText(buttonValue);
+                            }
+                            else {
+                                displayLabel.setText(displayLabel.getText() + buttonValue);
+                            }
+                        }
+                    }
+
+                }
+            });
         }
 
     }

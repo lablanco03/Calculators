@@ -112,6 +112,12 @@ public class Calculator {
                                 displayLabel.setText(displayLabel.getText() + buttonValue);
                             }
                         }
+                        // Implementation of the square root operation
+                        else if (buttonValue.equals("√")) {
+                            double number = Double.parseDouble(displayLabel.getText());
+                            double result = Math.sqrt(number);
+                            displayLabel.setText(String.valueOf(result));
+                        }
                     }
 
                 }

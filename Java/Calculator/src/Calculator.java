@@ -100,7 +100,9 @@ public class Calculator {
                     }
                     else { // Digits or "."
                         if (buttonValue.equals(".")) {
-
+                            if (!displayLabel.getText().contains(buttonValue)) {
+                                displayLabel.setText(displayLabel.getText() + buttonValue);
+                            }
                         }
                         else if ("0123456789".contains(buttonValue)) {
                             if (displayLabel.getText().equals("0")) {
@@ -115,6 +117,5 @@ public class Calculator {
                 }
             });
         }
-
     }
 }

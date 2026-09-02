@@ -144,6 +144,7 @@ public class Calculator {
         }
     }
 
+    // Resets the operation variables to zero and null
     void clearAll() {
         A = "0";
         operator = null;

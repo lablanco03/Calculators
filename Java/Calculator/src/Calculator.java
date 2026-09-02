@@ -34,6 +34,11 @@ public class Calculator {
     JPanel displayPanel = new JPanel();
     JPanel buttonsPanel = new JPanel();
 
+    // Variables of the operations
+    String A = "0";
+    String operator = null;
+    String B = null;
+
     // Calculator initialization
     Calculator() {
 
@@ -92,10 +97,24 @@ public class Calculator {
                 public void actionPerformed(ActionEvent e) {
                     JButton button = (JButton) e.getSource();
                     String buttonValue = button.getText();
+
+
                     if (Arrays.asList(rightSymbols).contains(buttonValue)) {
                         
                     }
+                    // AC, +/-, %
                     else if (Arrays.asList(topSymbols).contains(buttonValue)) {
+                        if (buttonValue.equals("AC")) {
+                            clearAll();
+                            displayLabel.setText("0");
+                            
+                        }
+                        else if (buttonValue.equals("+/-")) {
+                            
+                        }
+                        else if (buttonValue.equals("%")) {
+
+                        }
 
                     }
                     else { // Digits or "."
@@ -124,4 +143,11 @@ public class Calculator {
             });
         }
     }
+
+    void clearAll() {
+        A = "0";
+        operator = null;
+        B = null;
+    }
+
 }

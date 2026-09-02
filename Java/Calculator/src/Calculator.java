@@ -107,10 +107,11 @@ public class Calculator {
                         if (buttonValue.equals("AC")) {
                             clearAll();
                             displayLabel.setText("0");
-                            
                         }
                         else if (buttonValue.equals("+/-")) {
-                            
+                            double numDisplay = Double.parseDouble(displayLabel.getText());
+                            numDisplay *= -1;
+                            displayLabel.setText(removeZeroDecimal(numDisplay));
                         }
                         else if (buttonValue.equals("%")) {
 
@@ -151,4 +152,11 @@ public class Calculator {
         B = null;
     }
 
+    // Removes the decimal zero after changing the sign of the number
+    String removeZeroDecimal(double numDisplay) {
+        if (numDisplay % 1 == 0) {
+            return Integer.toString((int) numDisplay);
+        }
+        return Double.toString(numDisplay);
+    }
 }

@@ -43,7 +43,6 @@ public class Calculator {
     Calculator() {
 
         // Configure the main window
-        frame.setVisible(true);
         frame.setSize(boardWidth, boardHeight);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
@@ -144,6 +143,8 @@ public class Calculator {
 
                 }
             });
+            // Display the window after initializing all components
+            frame.setVisible(true);
         }
     }
 

@@ -100,7 +100,20 @@ public class Calculator {
                     // ÷, ×, -, +, =
                     if (Arrays.asList(rightSymbols).contains(buttonValue)) {
                         if (buttonValue.equals("=")) {
- 
+                            if (A != null) {
+                                B = displayLabel.getText();
+                                double numA = Double.parseDouble(A);
+                                double numB = Double.parseDouble(B);
+
+                                switch (operator) {
+                                    case "+" -> displayLabel.setText(removeZeroDecimal(numA + numB));
+                                    case "-" -> displayLabel.setText(removeZeroDecimal(numA - numB));
+                                    case "×" -> displayLabel.setText(removeZeroDecimal(numA * numB));
+                                    case "÷" -> displayLabel.setText(removeZeroDecimal(numA / numB));
+                                    default -> { } // No operation selected
+                                }
+                                clearAll();
+                            }
                         }
                         else if ("+-×÷".contains(buttonValue)) {
                             if (operator == null) {

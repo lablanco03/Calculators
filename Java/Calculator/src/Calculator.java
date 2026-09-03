@@ -97,9 +97,19 @@ public class Calculator {
                     JButton button = (JButton) e.getSource();
                     String buttonValue = button.getText();
 
-
+                    // ÷, ×, -, +, =
                     if (Arrays.asList(rightSymbols).contains(buttonValue)) {
-                        
+                        if (buttonValue.equals("=")) {
+ 
+                        }
+                        else if ("+-×÷".contains(buttonValue)) {
+                            if (operator == null) {
+                                A = displayLabel.getText();
+                                displayLabel.setText("0");
+                                B = "0";
+                            }
+                            operator = buttonValue;
+                        }
                     }
                     // AC, +/-, %
                     else if (Arrays.asList(topSymbols).contains(buttonValue)) {
@@ -117,7 +127,6 @@ public class Calculator {
                             numDisplay /= 100;
                             displayLabel.setText(removeZeroDecimal(numDisplay)); 
                         }
-
                     }
                     else { // Digits or "."
                         if (buttonValue.equals(".")) {
